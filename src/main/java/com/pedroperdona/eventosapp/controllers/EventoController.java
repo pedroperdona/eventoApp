@@ -2,6 +2,7 @@ package com.pedroperdona.eventosapp.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -26,7 +27,7 @@ public class EventoController {
 		return "redirect:/cadastrarEvento";
 	}
 
-	@RequestMapping(value = "/eventos")
+	@RequestMapping("/eventos")
 	public ModelAndView listaEventos() {
 
 		ModelAndView modelAndView = new ModelAndView("index");
@@ -34,6 +35,14 @@ public class EventoController {
 		Iterable<Evento> eventos = repository.findAll();
 		modelAndView.addObject("eventos", eventos);
 
+		return modelAndView;
+	}
+	
+	@RequestMapping("/{codigo}")
+	public ModelAndView detalhesEvento(@PathVariable("codigo") Integer codigo) {
+		Evento evento = repository.findByCodigo(codigo);
+		ModelAndView modelAndView = new ModelAndView("evento/detalhesEvento");
+		modelAndView.addObject("evento", evento);
 		return modelAndView;
 	}
 
