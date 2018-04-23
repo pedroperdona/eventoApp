@@ -13,8 +13,10 @@
 <body>
 
 	<h1>Evento</h1>
-	<h3> <a href="/eventos" class="waves-effect waves-light btn"><i class="material-icons left">dehaze</i>Lista de eventos</a> </h3>
-	
+	<h3>
+		<a href="/eventos" class="waves-effect waves-light btn"><i class="material-icons left">dehaze</i>Lista de eventos</a>
+	</h3>
+
 	<div th:each="evento : ${evento}" class="container">
 		<div class=row>
 			<p>Nome:<span th:text="${evento.nome}"></span></p>
@@ -22,13 +24,12 @@
 			<p>Data:<span th:text="${evento.data}"></span></p>
 			<p>Horário:<span th:text="${evento.horario}"></span></p>
 		</div>
+
+		<form method="post">
+			Nome: <input value="" type="text" name="nome"> CPF: <input value="" type="text" name="cpf">
+			<button class="waves-effect waves-light btn" type="submit">Adicionar</button>
+		</form>
 	</div>
-	
-	<form method="post">
-		Nome: <input value="" type="text" name="nome">
-		CPF: <input value="" type="text" name="cpf">	
-		<button class="waves-effect waves-light btn" type="submit">Adicionar</button>	
-	</form>
 
 	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 </body>
