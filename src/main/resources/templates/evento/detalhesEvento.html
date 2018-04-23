@@ -17,7 +17,7 @@
 		<a href="/eventos" class="waves-effect waves-light btn"><i class="material-icons left">dehaze</i>Lista de eventos</a>
 	</h3>
 
-	<div th:each="evento : ${evento}" class="container">
+	<div class="container" th:each="evento : ${evento}">
 		<div class=row>
 			<p>Nome:<span th:text="${evento.nome}"></span></p>
 			<p>Local:<span th:text="${evento.local}"></span></p>
@@ -29,6 +29,18 @@
 			Nome: <input value="" type="text" name="nome"> CPF: <input value="" type="text" name="cpf">
 			<button class="waves-effect waves-light btn" type="submit">Adicionar</button>
 		</form>
+	</div>
+
+	<h5>Lista de convidados</h5>
+	<div class="container" th:each="convidado : ${convidados}">
+		<div class="row">
+			<div class="input-field col s6">
+				<p>Nome:<span th:text="${convidado.nome}"></span></p>
+			</div>
+			<div class="input-field col s3">
+				<p>CPF:<span th:text="${convidado.cpf}"></span></p>
+			</div>
+		</div>
 	</div>
 
 	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
