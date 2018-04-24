@@ -12,19 +12,27 @@
 
 <body>
 
-	<h1>Cadastro de eventos</h1>
-	<h3> <a href="/eventos" class="waves-effect waves-light btn"> <i class="material-icons left">dehaze</i>Lista de eventos</a> </h3>
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo center">Cadastro de eventos</a>
+			<ul id="nav-mobile" class="left hide-on-med-and-down">
+				<li>
+					<a href="/eventos" class="waves-effect waves-light btn"> 
+						<i class="material-icons left">dehaze</i>Lista de eventos</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 
-	
 	<form class="container" method="post">
-		
+
 		<th:block th:include="mensagemValidacao"></th:block>
-		
+
 		Nome: <input type="text" value="" name="nome">
 
 		<div class=row>
 			<div class="input-field col s6">
-				Local: <input type="text" value="" name="local">
+				Local:<input type="text" value="" name="local">
 			</div>
 
 			<div class="input-field col s3">
@@ -32,7 +40,7 @@
 			</div>
 
 			<div class="input-field col s3">
-				Horário: <input type="text" value="" name="horario">
+				Horário: <input type="time" value="" name="horario">
 			</div>
 		</div>
 

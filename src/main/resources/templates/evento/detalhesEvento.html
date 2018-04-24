@@ -12,10 +12,17 @@
 
 <body>
 
-	<h1>Evento</h1>
-	<h3>
-		<a href="/eventos" class="waves-effect waves-light btn"><i class="material-icons left">dehaze</i>Lista de eventos</a>
-	</h3>
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo center">Evento</a>
+			<ul id="nav-mobile" class="left hide-on-med-and-down">
+				<li>
+					<a href="/eventos" class="waves-effect waves-light btn">
+						<i class="material-icons left">dehaze</i>Lista de eventos</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 
 	<div class="container" th:each="evento : ${evento}">
 		<div class=row>

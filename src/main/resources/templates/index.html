@@ -3,19 +3,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>EventosApp</title>
+	<title>EventosApp</title>
 </head>
 
 <body>
 
-	<h1>Lista de eventos</h1>
-	<h3>
-		<a href="/cadastrarEvento" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar evento</a>
-	</h3>
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo center">Lista de eventos</a>
+			<ul id="nav-mobile" class="left hide-on-med-and-down">
+				<li>
+					<a href="/cadastrarEvento" class="waves-effect waves-light btn">
+						<i class="material-icons left">add_circle_outline</i>Cadastrar evento</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 
 	<table class="container">
 		<thead>
@@ -29,10 +36,24 @@
 
 		<tbody>
 			<tr th:each="evento : ${eventos}">
-				<td><a th:href="${(#mvc.url('EC#listDetalhesEvento').arg(0, evento.codigo)).build()}"><span th:text="${evento.nome}"></span></a></td>
-				<td><span th:text="${evento.local}"></span></td>
-				<td><span th:text="${evento.data}"></span></td>
-				<td><span th:text="${evento.horario}"></span></td>
+				
+				<td>
+					<a th:href="${(#mvc.url('EC#listDetalhesEvento').arg(0, evento.codigo)).build()}">
+						<span th:text="${evento.nome}"></span>
+					</a>
+				</td>
+
+				<td>
+					<span th:text="${evento.local}"></span>
+				</td>
+
+				<td>
+					<span th:text="${evento.data}"></span>
+				</td>
+
+				<td>
+					<span th:text="${evento.horario}"></span>
+				</td>
 			</tr>
 		</tbody>
 
