@@ -61,13 +61,25 @@
 			<tr>
 				<th>Nome</th>
 				<th>CPF</th>
+				<th>Deletar</th>
 			</tr>
 		</thead>
 
 		<tbody>
 			<tr th:each="convidado : ${convidados}">
-				<td><span th:text=${convidado.nome}></span></td>
-				<td><span th:text=${convidado.cpf}></span></td>
+				<td>
+					<span th:text=${convidado.nome}></span>
+				</td>
+				
+				<td>
+					<span th:text=${convidado.cpf}></span></td>
+				<td>
+				
+				<td>
+					<a class="waves-effect waves-red waves-button-input" th:href="${(#mvc.url('EC#deleteConvidado').arg(0, convidado.cpf)).build()}">
+						<i class="material-icons">delete</i>
+					</a>
+				</td>
 			</tr>
 		</tbody>
 	</table>

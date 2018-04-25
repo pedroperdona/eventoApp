@@ -85,4 +85,21 @@ public class EventoController {
 		return "redirect:/{codigo}";
 	}
 
+	@RequestMapping("/deletarEvento")
+	public String deleteEvento(Integer codigo) {
+		
+		Evento evento = eventoRepository.findByCodigo(codigo);
+		eventoRepository.delete(evento);
+		
+		return "redirect:/eventos";
+	}
+	
+	@RequestMapping("/deletarConvidado")
+	public String deleteConvidado(String cpf) {
+		
+		Convidado convidado = convidadoRepository.findByCpf(cpf);
+		convidadoRepository.delete(convidado);
+		return "redirect:/" + convidado.getEvento().getCodigo().toString();
+	}
+
 }
