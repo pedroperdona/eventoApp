@@ -8,6 +8,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<title>EventosApp</title>
+
+	<link rel="stylesheet" href="style/styleCss.css"/>
 </head>
 
 <body>
@@ -36,7 +38,7 @@
 
 		<tbody>
 			<tr th:each="evento : ${eventos}">
-				
+
 				<td>
 					<a th:href="${(#mvc.url('EC#listDetalhesEvento').arg(0, evento.codigo)).build()}">
 						<span th:text="${evento.nome}"></span>

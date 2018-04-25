@@ -8,6 +8,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<title>EventosApp</title>
+
+	<link rel="stylesheet" href="style/styleCss.css"/>
 </head>
 
 <body>
@@ -16,19 +18,20 @@
 		<div class="nav-wrapper">
 			<a href="#" class="brand-logo center">Cadastro de eventos</a>
 			<ul id="nav-mobile" class="left hide-on-med-and-down">
-				<li>
-					<a href="/eventos" class="waves-effect waves-light btn"> 
-						<i class="material-icons left">dehaze</i>Lista de eventos</a>
-				</li>
+				<li><a href="/eventos" class="waves-effect waves-light btn"><i class="material-icons left">dehaze</i>Lista de eventos</a></li>
 			</ul>
 		</div>
 	</nav>
 
-	<form class="container" method="post">
+	<form class="container formularioEvento" method="post">
 
 		<th:block th:include="mensagemValidacao"></th:block>
-
-		Nome: <input type="text" value="" name="nome">
+		
+		<div class=row>
+			<div class="input-field col s12">
+				Nome: <input type="text" value="" name="nome">
+			</div>
+		</div>
 
 		<div class=row>
 			<div class="input-field col s6">

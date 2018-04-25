@@ -7,7 +7,7 @@ import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Convidado {
-	
+
 	@Id
 	@NotEmpty
 	private String cpf;

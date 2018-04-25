@@ -1,0 +1,29 @@
+.detalhesEvento {
+	margin-top: 20px;
+	box-shadow: 0px 0px 5px gray;
+	padding-top: 20px;
+	padding-left: 20px;
+	margin-bottom: 20px;
+}
+
+.formularioConvidado {
+	box-shadow: 0px 0px 5px gray;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 20px;	
+}
+
+.tabelaConvidado {
+	box-shadow: 0px 0px 5px gray;
+	margin-bottom: 20px;
+}
+
+.formularioEvento {
+	margin-top: 20px;
+	box-shadow: 0px 0px 5px gray;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 20px;	
+}
