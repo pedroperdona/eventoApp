@@ -69,14 +69,14 @@ public class EventoController {
 	}
 
 	@RequestMapping(value = "/{codigo}", method = RequestMethod.POST)
-	public String saveDetalhesEvento(@PathVariable("codigo") Integer codigo, @Valid Convidado convidado, BindingResult result, RedirectAttributes attributes) {
+	public String saveDetalhesEvento(@PathVariable("codigo") Integer codigoEvento, @Valid Convidado convidado, BindingResult result, RedirectAttributes attributes) {
 
 		if (result.hasErrors()) {
 			attributes.addFlashAttribute("mensagem", "Verifique os campos");
 			return "redirect:/{codigo}";
 		}
 
-		Evento evento = eventoRepository.findByCodigo(codigo);
+		Evento evento = eventoRepository.findByCodigo(codigoEvento);
 		convidado.setEvento(evento);
 
 		convidadoRepository.save(convidado);
@@ -95,9 +95,9 @@ public class EventoController {
 	}
 	
 	@RequestMapping("/deletarConvidado")
-	public String deleteConvidado(String cpf) {
+	public String deleteConvidado(Integer codigo) {
 		
-		Convidado convidado = convidadoRepository.findByCpf(cpf);
+		Convidado convidado = convidadoRepository.findByCodigo(codigo);
 		convidadoRepository.delete(convidado);
 		return "redirect:/" + convidado.getEvento().getCodigo().toString();
 	}
