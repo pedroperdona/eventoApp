@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="style/styleCss.css"/>
 </head>
 
-<body>
+<body class="container">
 
 	<nav>
 		<div class="nav-wrapper">
@@ -23,7 +23,7 @@
 		</div>
 	</nav>
 
-	<div class="container detalhesEvento" th:each="evento : ${evento}">
+	<div class="detalhesEvento" th:each="evento : ${evento}">
 		<h5>Detalhes do evento</h5>
 		<div class=row>
 			<p>Nome: <span th:text="${evento.nome}"></span></p>
@@ -34,7 +34,7 @@
 	</div>
 
 	
-	<div class="container formularioConvidado">
+	<div class="formularioConvidado">
 		
 		<th:block th:include="mensagemValidacao"></th:block>
 		
@@ -56,7 +56,7 @@
 		</form>
 	</div>
 	
-	<table class="container tabelaConvidado">
+	<table class="tabelaConvidado">
 		<thead>
 			<tr>
 				<th>Nome</th>
